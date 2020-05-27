@@ -8,6 +8,7 @@ const passport = require('passport');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const flash = require('connect-flash');
+const mongourl = require('./config/mongokey');
 
 
 // using Bodyparser for getting form data
@@ -46,7 +47,7 @@ const checkAuthenticated = function (req, res, next) {
 
 // Connecting To Database
 // using Mongo Atlas as database
-mongoose.connect('---', {
+mongoose.connect(, {
     useNewUrlParser: true, useUnifiedTopology: true,
 }).then(() => console.log("Database Connected")
 );
