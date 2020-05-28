@@ -4,13 +4,16 @@
 ## [Tutorial](https://youtu.be/vkIltwAySrk)
 
 ## 1. USAGE
-`````
+```bash
         # Use your Own URI To Connect To Database
     $ npm install
     $ npm run dev
 
         # Visit http://localhost:5000
-`````
+
+	To Install everything at once
+npm i ejs mongoose bcryptjs passport passport-local express-session cookie-parser connect-flash
+```
 
 ## Packages
 
