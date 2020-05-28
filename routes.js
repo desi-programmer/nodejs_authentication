@@ -47,7 +47,7 @@ const checkAuthenticated = function (req, res, next) {
 
 // Connecting To Database
 // using Mongo Atlas as database
-mongoose.connect(, {
+mongoose.connect(mongourl ,{
     useNewUrlParser: true, useUnifiedTopology: true,
 }).then(() => console.log("Database Connected")
 );
