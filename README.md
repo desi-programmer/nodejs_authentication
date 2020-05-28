@@ -53,3 +53,10 @@ A --> C(Starter Kit)
             login.html
             register.html
 ```
+
+```bash
+	npm cache verify
+	npm cache clean --force (Optional)
+	npm install
+	npm start
+```
