@@ -168,7 +168,7 @@ routes.post('/addmsg', checkAuthenticated, (req, res) => {
         }
     );
     res.redirect('/success');
-});
+}); 
 
 
 module.exports = routes;
