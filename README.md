@@ -60,3 +60,7 @@ A --> C(Starter Kit)
 	npm install
 	npm start
 ```
+
+TODO
+
+1. add login signup error message
