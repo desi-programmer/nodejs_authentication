@@ -1,18 +1,46 @@
 const express = require('express');
+const mongoose = require('mongoose');
+const csrf = require('csurf');
+const cookieParser = require('cookie-parser');
+const expressSession = require('express-session');
+var MemoryStore = require('memorystore')(expressSession)
+const passport = require('passport');
+const flash = require('connect-flash');
+
 const app = express();
-const routes = require('./controllers/routes');
-const path = require('path');
 
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', __dirname + '/views',);
 
-app.get('/', routes);
-app.post('/register', routes);
-app.get('/login', routes);
-app.post('/login', routes);
-app.get('/success', routes);
-app.get('/logout', routes);
-app.post('/addmsg', routes);
+app.use(express.urlencoded({ extended: true }));
+
+const mongoURI = require('./config/monkoKEY');
+mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true, },).then(() => console.log("Connected !"),);
+
+app.use(cookieParser('random'));
+
+app.use(expressSession({
+    secret: "random",
+    resave: true,
+    saveUninitialized: true,
+    // setting the max age to longer duration
+    maxAge: 24 * 60 * 60 * 1000,
+    store: new MemoryStore(),
+}));
+
+app.use(csrf());
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(flash());
+
+app.use(function (req, res, next) {
+    res.locals.error = req.flash('error');
+    next();
+});
+
+app.use(require('./controller/routes.js'));
 
 const PORT = process.env.PORT || 8000;
-app.listen(PORT, () => console.log("Server Stated At Port", PORT));
+
+app.listen(PORT, () => console.log("Server Started At " + PORT));

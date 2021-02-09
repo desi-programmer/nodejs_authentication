@@ -1,63 +1,41 @@
 # Node Passport Authentication
 
-## [Tutorial](https://youtu.be/vkIltwAySrk)
+This repo contains code for Local email-passport authentication and Google Authentication.
+  
+
+## Blog (Local Auth) : [Here](https://desiprogrammer.com/blogs/node-express-passport-email-authentication)
+
+## Blog (Google Auth) : 
+
+## Tutorial (Local Auth) : 
+
+## Tutorial (Google Auth) : 
+
+  
 
 ## 1. USAGE
 
-```
-        # Use your Own URI To Connect To Database
-    $ npm install
-    $ npm run dev
-
-        # Visit http://localhost:5000
-```
-
-## Packages
-
-1. Express
-2. ejs
-3. Mongoose
-4. BcryptJS
-5. passport
-6. passport-local
-7. express-session
-8. cookie-parser
-9. connect-flash
-
-```mermaid
-graph TD
-A[Source Code] -->|Branched > ytsource | B(Source Code As In Youtube Video)
-A --> C(Starter Kit)
-```
-
-## Directory Structure
-
 ```bash
-|   .gitignore
-|   index.js
-|   models.js
-|   package-lock.json
-|   package.json
-|   README.md
-|   routes.js
-|
-+---config
-|       mongokey.js
-|
-\---views
-    |   index.ejs
-    |   login.ejs
-    |   success.ejs
-    |
-    \---bare_templates
-            login.html
-            register.html
+
+# add your own mongo URI in config/mongoURI.js
+
+# add your google client Id and secret in config/googleData.js
+
+
+npm install
+
+# if you want nodemon
+
+npm i -D nodemon
+
+npm start
+
+# visit localhost:8000
+
 ```
 
-```bash
-	npm cache verify
-	npm cache clean --force (Optional)
-	npm install
-	npm start
-```
+# TODO
 
+[ ] - Add User Password rest
+
+[ ] - Add Verify Account
