@@ -14,24 +14,17 @@ This repo contains code for Local email-passport authentication and Google Authe
 
 ## 1. USAGE
 
+### Install All Packages
+
 ```bash
-
-# add your own mongo URI in config/mongoURI.js
-
-# add your google client Id and secret in config/googleData.js
-
-
-npm install
-
-# if you want nodemon
-
-npm i -D nodemon
-
-npm start
-
-# visit localhost:8000
-
+npm install express ejs mongoose bcryptjs connect-flash cookie-parser express-session csurf memorystore passport passport-local passport-google-oauth20
 ```
+### Install Nodemon For Development
+
+```bash
+npm install -D nodemon
+```
+### Add mongoURI and google client ID and Secret
 
 # TODO
 
