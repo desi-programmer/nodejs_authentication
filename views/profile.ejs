@@ -52,19 +52,53 @@
 
 
   <div class="container">
-    <h1 class="text-center p-3">Your Profile</h1>
+    <!-- show a dialog if user is not verified  -->
 
-    <div class="card" style="width: 28rem;">
-      <img
-        src="https://images.pexels.com/photos/917494/pexels-photo-917494.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-        class="card-img-top" alt="...">
-      <div class="card-body">
-        <h3 class="card-title">
-          <%= username %>
-        </h3>
+    <% if(!verified){ %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>ATTENTION !</strong> Please verify your account to continue using our services.
+
+        <a href="/user/send-verification-email">Re-send Verification Email</a>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 
       </div>
-    </div>
+      <% } %>
+
+        <% if(typeof emailsent !='undefined' ){ %>
+          <% if(emailsent){ %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>SUCCESS</strong> Verification Email Sent Sucessfully. Valid Only for 20 minutes.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+            </div>
+
+            <% } %>
+              <% } %>
+                <% if(typeof err !='undefined' ){ %>
+                  <% if(err){ %>
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <strong>ERROR </strong>
+                      <%= err %>.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+                    </div>
+
+                    <% } %>
+                      <% } %>
+
+                        <h1 class="text-center p-3">Your Profile</h1>
+
+                        <div class="card" style="width: 28rem;">
+                          <img
+                            src="https://images.pexels.com/photos/917494/pexels-photo-917494.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h3 class="card-title">
+                              <%= username %>
+                            </h3>
+
+                          </div>
+                        </div>
 
   </div>
 

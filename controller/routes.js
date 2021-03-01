@@ -5,6 +5,7 @@ const bcryptjs = require('bcryptjs');
 const passport = require('passport');
 require('./passportLocal')(passport);
 require('./googleAuth')(passport);
+const userRoutes = require('./accountRoutes');
 
 function checkAuth(req, res, next) {
     if (req.isAuthenticated()) {
@@ -98,9 +99,12 @@ router.get('/google/callback', passport.authenticate('google', { failureRedirect
 });
 
 router.get('/profile', checkAuth, (req, res) => {
-
-    res.render('profile', { username: req.user.username });
+    // adding a new parameter for checking verification
+    res.render('profile', { username: req.user.username, verified : req.user.isVerified });
 
 });
+
+
+router.use(userRoutes);
 
 module.exports = router;
