@@ -86,6 +86,17 @@
         </div>
         <% } %>
 
+        <!-- if someone tried to access a protected route  -->
+        <!-- this flash message will show them to login first  -->
+
+        <% if( error_messages !="" ){ %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+              <strong> Error </strong>
+              <%= error_messages %>.
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+          <% } %>
+
         <form action="/login" , method="POST">
           <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
           <div class="mb-3">
