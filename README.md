@@ -29,10 +29,10 @@ npm install -D nodemon
 
 # Added Options
 
-![Image1](screenshots\error_flash_on_accessing_unauthenticated_routes.png)
-![Image2](screenshots\reset_password_added.png)
-![Image3](screenshots\change_password_option.png)
-![Image4](screenshots\alert_with_working_email_send.png)
+![Image1](screenshots/error_flash_on_accessing_unauthenticated_routes.png)
+![Image2](screenshots/reset_password_added.png)
+![Image3](screenshots/change_password_option.png)
+![Image4](screenshots/alert_with_working_email_send.png)
 
 # Todo ( ✔ -> Done )
 
