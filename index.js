@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const csrf = require('csurf');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
-var MemoryStore = require('memorystore')(expressSession)
+const MemoryStore = require('memorystore')(expressSession)
 const passport = require('passport');
 const flash = require('connect-flash');
 
